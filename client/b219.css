@@ -1,0 +1,121 @@
+@font-face {
+    font-family: "Xolonium";
+    font-weight: bold;
+    src: url(/XOLONIUM-BOLD.OTF) format("opentype");
+}
+@font-face {
+    font-family: "Xolonium";
+    font-weight: normal;
+    src: url(/XOLONIUM-REGULAR.OTF) format("opentype");
+}
+
+html, body, .game {
+    height: 100%;
+    margin: 0; padding: 0;
+}
+
+body {
+    background: linear-gradient(#004, #408) fixed;
+    
+}
+
+.planet {
+    background: #018;
+    width: 80vmin;
+    height:80vmin;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%; left: 50%; transform: translate(-50%,-50%);
+    perspective: 80vmin;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 8vmin rgba(255,230,255,0.8);
+}
+.surface {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translateZ(20vmin);
+}
+.sky {
+    backface-visibility: hidden;
+}
+
+@keyframes earth-rotating {
+    from {
+        transform: rotateY(0deg);
+    }
+    25% {
+        transform: rotateY(90deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    75% {
+        transform: rotateY(270deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+.stars {
+    /*animation: earth-rotating 3600s linear infinite;*/
+}
+
+.planet * {
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.continent {
+    width: 10vmin; height: 20vmin;
+    background: #080;
+}
+
+.viewport {
+    width: 400%;
+    height: 200%;
+}
+
+.hud {
+    position: fixed;
+    color: rgba(201, 236, 249, 0.87);
+    text-shadow: 0 0 0.9em rgba(201, 236, 249, 0.87);
+    font-family: "Xolonium";
+    font-size: 20px;
+    z-index: 2;
+}
+
+.well {
+    border: 1px solid rgba(201, 236, 249, 0.87);
+    box-shadow: 0 0 3px rgba(201, 236, 249, 0.87), 0 0 3px rgba(201, 236, 249, 0.87) inset;
+    margin: 16px 32px;
+    padding: 8px 24px;
+    background: rgba(201,236,249,0.2);
+}
+
+.close {
+    color: inherit;
+    float: right;
+    text-decoration: none;
+}
+
+.message {
+    display: none;
+}
+.message:target {
+    display: initial;
+}
+
+.bottom-left {
+    border: 1px solid rgba(201, 236, 249, 0.87);
+    border-bottom: none;
+    border-left: none;
+    position: fixed;
+    left: 0; bottom: 0;
+    box-shadow: 0 0 3px rgba(201, 236, 249, 0.87), 0 0 3px rgba(201, 236, 249, 0.87) inset;
+    margin: 16px 32px 0 0;
+    padding: 8px 24px;
+    background: rgba(201,236,249,0.2);
+}

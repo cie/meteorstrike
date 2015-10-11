@@ -1,0 +1,88 @@
+<head>
+  <title>b219</title>
+</head>
+
+<body>
+  {{> game}}
+</body>
+
+<template name="game">
+  <div class="hud">
+    <div class="message" id="news1">
+      <div class="well" >
+        <a href="#planet" class=close>X</a>
+        <p>President!</p>
+        <p>An asteroid! We detected it just a few minutes ago. It will cross the
+           orbit of the Earth in 9 minutes!</p>
+      </div>
+    </div>
+    
+    {{#if time}}
+      <div class="bottom-left">
+        {{time}}
+      </div>
+    {{/if}}
+    
+  </div>
+  <div class="viewport">
+    <div class="planet" id="planet">
+      <div class="surface" style="
+        transform:
+          translateZ(-17vmin)
+          rotateX({{lin sy 0 90 1 270}}deg)
+          rotateY({{lin sx 0 0 1 360}}deg)
+      ">
+        {{>sky}}
+        
+        
+        {{>ground lat=42.689167 lng=-78.044444 elev=0 r=6}}
+        {{>ground lat=42.689167 lng=-67.044444 elev=0 r=6}}
+        {{>ground lat=40.689167 lng=-74.044444 elev=0 r=10}}
+        {{>ground lat=42.689167 lng=-67.044444 elev=0 r=6}}
+        {{>monument src="liberty.png" height=9 lat=40.689167 lng=-74.044444 elev=0}}
+        
+        
+        {{>ground lat=0 lng=20 elev=0 r=6}}
+        {{>ground lat=7 lng=21 elev=0 r=8}}
+        {{>monument src="tower.png" height=8 lat=-0.05 lng=20.5 elev=0}}
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="geo">
+  <div style="
+    transform:
+      rotateY({{lin lng 0 0 1 -1}}deg)
+      rotateX({{lin lat 0 0 1 -1}}deg)
+      translateZ(43.2vmin) translateZ({{elev}}vmin)
+    ">
+    {{>UI.contentBlock}}
+  </div>
+</template>
+
+
+<template name="ground">
+  {{#geo lat=lat lng=lng elev=elev}}
+  <div style="
+    transform: translate(-50%,-50%);
+    background: green;
+    border-radius: 50%;
+    width: {{r}}vmin; height: {{r}}vmin;
+    ">
+  </div>
+  {{/geo}}
+</template>
+
+<template name="monument">
+  {{#geo lat=lat lng=lng elev=elev}}
+  <img src="/{{src}}" style="
+    transform: rotateX(-90deg) translate(-50%,-100%) rotateY({{cface}}deg);
+    transform-origin: 50% 0;
+    height: {{height}}vmin;
+  ">
+  {{/geo}}
+</template>

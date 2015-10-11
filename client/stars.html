@@ -1,7 +1,7 @@
 
 <template name="sky">
   <!-- source: http://www.atlasoftheuniverse.com/stars.html -->
-  <div></div>
+  <div class="stars">
 {{>star name="Alpha Canis Majoris       "  rah=6 ram=45 dec="-16.7" mag=-1.46 }}
 {{>star name="Alpha Carinae             "  rah=6 ram=24 dec="-52.7" mag=-0.73 }}
 {{>star name="Alpha Centauri            "  rah=14 ram=40 dec="-60.8" mag=-0.29 }}
@@ -302,6 +302,7 @@
 {{>star name="Xi Hydrae                 "  rah=11 ram=33 dec="-31.9"  mag=3.54 }}
 {{>star name="Mu Serpentis              "  rah=15 ram=50 dec="-3.4"  mag=3.54 }}
 {{>star name="Xi Serpentis              "  rah=17 ram=38 dec="-15.4"  mag=3.54 }}
+</div>
 </template>
 
 <template name="star">
@@ -315,6 +316,7 @@
     ">
       <div style="
         background: white;
+        box-shadow: 0 0 {{lin mag 3.54 0.2 -1.46 3}}vmin rgba(255,255,255,1);
         border-radius: 50%;
         width: {{lin mag 3.54 0.2 -1.46 3}}vmin; height: {{lin mag 3.54 0.2 -1.46 3}}vmin;
         ">
