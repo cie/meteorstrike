@@ -1,22 +1,7 @@
+# Meteor Strike
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Welcome to your Meteor project on Cloud9 IDE!
-
-To run your new app open your terminal and type:
-   
-    $ meteor --port $IP:$PORT
-
-
-Happy coding!
-The Cloud9 IDE team
-
-## Support & Documentation
-
-Meteor documentation can be found at http://docs.meteor.com/
+A multi-player game where you need to save the planet from a crash with an
+asteroid. Each player controls a country, and the only way to avoid the
+disaster is to collaborate somehow. Some reasonable solutions seem to be
+evacuating the planet, defending the population or destroying the asteroid.
+But time is very short...
