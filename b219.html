@@ -15,6 +15,7 @@
           rotateX({{lin sy 0 90 1 270}}deg)
           rotateY({{lin sx 0 0 1 360}}deg)
       ">
+        {{>sky}}
         {{#geo lat=0 lng=0 elev=0}}
           {{>circle r=4}}
         {{/geo}}
@@ -36,12 +37,7 @@
         {{#geo lat=90 lng=0 elev=0}}
           {{>circle r=4}}
         {{/geo}}
-        {{#geo lat=90 lng=0 elev=2}}
-          {{>circle r=4}}
-        {{/geo}}
-        {{#geo lat=90 lng=0 elev=5}}
-          {{>circle r=4}}
-        {{/geo}}
+        
       </div>
     </div>
   </div>
@@ -58,8 +54,10 @@
   </div>
 </template>
 
+
 <template name="circle">
   <div style="
+    transform: translate(-50%,-50%);
     background: yellow;
     border-radius: 50%;
     width: {{r}}vmin; height: {{r}}vmin;
@@ -67,3 +65,4 @@
     Hi
   </div>
 </template>
+
